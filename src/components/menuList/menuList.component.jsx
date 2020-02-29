@@ -46,12 +46,12 @@ class MenuList extends Component {
   }
 
   render() {
-    console.log(this.state.sections);
+    // console.log(this.state.sections);
     // const { title, id, imageUrl, size } = this.state.sections;
     // console.log(title)
     return (
-      <div className='manuList'>
-        {this.state.sections.map(({ title, id, imageUrl, size }) => {
+      <div className="manuList">
+        {this.state.sections.map(({ title, id, imageUrl, size, linkUrl }) => {
           return (
             <MenuItem
               key={id}
@@ -59,6 +59,7 @@ class MenuList extends Component {
               imageUrl={imageUrl}
               size={size}
               className="manuItem"
+              linkUrl={linkUrl}
             />
           );
         })}
