@@ -1,0 +1,17 @@
+.shop-prev__header {
+    margin-left: 10px;
+}
+
+.shop-prev {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+.shop-item-container {
+    width: 25%;
+}
+
+.shop-item-container {
+    margin: 10px;
+}

@@ -1,0 +1,16 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+  background: grey;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.header__menu {
+  display: flex;
+}
+
+.header__menu__item {
+  margin: 0 10px;
+}
