@@ -2,9 +2,9 @@ import React from "react";
 
 import "./customBtn.styles.css";
 
-const CustomBtn = (props) => {
+const CustomBtn = ({children, ...otherProps}) => {
   return (
-  <button onClick={(e)=>e.preventDefault}>{props.children}</button>
+  <button {...otherProps}>{children}</button>
   );
 };
 

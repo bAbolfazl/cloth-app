@@ -4,7 +4,7 @@ import "./formInput.styles.css";
 
 const FormInput = ({ label, ...props }) => {
   return (
-    <div className="input-container">{console.log('forminput props',props)}
+    <div className="input-container">
       <input className="input" {...props} />
       {label ? (
         <label className={`${props.value.length ? "shrink" : ""} label`}>

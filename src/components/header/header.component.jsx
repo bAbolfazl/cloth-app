@@ -2,9 +2,11 @@ import React from "react";
 
 import { Link } from "react-router-dom";
 
+import { auth } from "../../firebase/firebase.utils";
+
 import "./header.styles.css";
 
-const Header = () => (
+const Header = ({ curruntUser }) => (
   <div className="header">
     <Link to="/">
       <div className="header__logo">LOGO</div>
@@ -16,9 +18,19 @@ const Header = () => (
       <Link to="/shop">
         <div className="header__menu__item">SHOP</div>
       </Link>
-      <Link to="/">
-        <div className="header__menu__item">HOME</div>
-      </Link>
+      {curruntUser ? (
+        <div
+          className="header__menu__item"
+          style={{ cursor: "pointer" }}
+          onClick={() => auth.signOut()}
+        >
+          Sign Out
+        </div>
+      ) : (
+        <Link to="/signin">
+          <div className="header__menu__item">Sign In</div>
+        </Link>
+      )}
     </div>
   </div>
 );
