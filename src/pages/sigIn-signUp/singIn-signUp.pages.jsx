@@ -1,12 +1,12 @@
 import React from "react";
 
-import "./signIn.style.css";
+import "./singIn-signUp.style.css";
 
-import SingIn from "../../components/singIn/signIn.component";
-import Register from "../../components/register/register.component";
+import SingIn from "../../components/signIn/signIn.component";
+// import Register from "../../components/register/register.component";
 
 const SignInPage = () => (
-  <div className="singnin-page">
+  <div className="signin-page">
     <SingIn />
     {/* <Register /> */}
   </div>
