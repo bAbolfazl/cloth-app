@@ -6,8 +6,9 @@ import { auth } from "../../firebase/firebase.utils";
 
 import "./header.styles.css";
 
-const Header = ({ curruntUser }) => (
+const Header = ({ currentUser }) => ( 
   <div className="header">
+    {/* {console.log(currentUser)} */}
     <Link to="/">
       <div className="header__logo">LOGO</div>
     </Link>
@@ -18,7 +19,7 @@ const Header = ({ curruntUser }) => (
       <Link to="/shop">
         <div className="header__menu__item">SHOP</div>
       </Link>
-      {curruntUser ? (
+      {currentUser ? (
         <div
           className="header__menu__item"
           style={{ cursor: "pointer" }}

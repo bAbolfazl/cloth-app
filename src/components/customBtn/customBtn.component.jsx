@@ -2,9 +2,10 @@ import React from "react";
 
 import "./customBtn.styles.css";
 
-const CustomBtn = ({children, ...otherProps}) => {
+const CustomBtn = ({ children, fullWidth, ...otherProps }) => {
+  // const x = fullWidth===true ? 'width: 100%' : ''  
   return (
-  <button {...otherProps}>{children}</button>
+    <button style={{ width: fullWidth === true ? '100%' : null }} {...otherProps} >{children}</button>
   );
 };
 
