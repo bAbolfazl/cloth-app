@@ -4,7 +4,7 @@ import "./signUp.styles.css";
 
 import FormInput from "../formInput/formInput.component";
 import CustomBtn from "../customBtn/customBtn.component";
-import { signInWithGoogle, auth, createUserProfileDoc } from "../../firebase/firebase.utils";
+import { auth, createUserProfileDoc } from "../../firebase/firebase.utils";
 
 class SignUp extends React.Component {
     constructor(props) {
@@ -23,7 +23,7 @@ class SignUp extends React.Component {
         event.preventDefault();
 
         const { email, password, confirmPassword, displayName } = this.state;
-        console.log('sign up state',this.state)
+        console.log('sign up state', this.state)
 
         if (password !== confirmPassword) {
             alert('Passwords doesn\'t math')
@@ -32,15 +32,15 @@ class SignUp extends React.Component {
 
         console.log('finished')
         try {
-        const {user} = await auth.createUserWithEmailAndPassword(email, password)
+            const { user } = await auth.createUserWithEmailAndPassword(email, password)
 
-        await createUserProfileDoc(user, { displayName })
-        this.setState({ email: "", password: "", confirmPassword: '', displayName: '' });
-    } catch (er) {
-        console.log('error signing up', er)
-        alert(er.message)
+            await createUserProfileDoc(user, { displayName })
+            this.setState({ email: "", password: "", confirmPassword: '', displayName: '' });
+        } catch (er) {
+            console.log('error signing up', er)
+            alert(er.message)
 
-    }
+        }
     };
 
     handleChange = event => {

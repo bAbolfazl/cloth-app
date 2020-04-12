@@ -5,10 +5,12 @@
   background: grey;
   padding: 20px;
   border-radius: 5px;
+  position: relative;
 }
 
 .header__menu {
   display: flex;
+  align-items: center;
 }
 
 .header__menu__item {

@@ -4,13 +4,23 @@ import { Link } from "react-router-dom";
 import { auth } from "../../firebase/firebase.utils";
 import { connect } from 'react-redux'
 
+import { ReactComponent as Logo } from '../../assets/4.3 crown.svg.svg'
 import "./header.styles.css";
+import CartIcon from "../cart-icon/cart-icon.component";
+import CartDropdown from '../cart-dropdown/cartDropdown.component'
 
-const Header = ({ currentUser }) => (
+
+const handleCartIcon_click = () => {
+
+}
+
+const Header = ({ currentUser, cartDropdownDisplay }) => (
   <div className="header">
     {/* {console.log(currentUser)} */}
+
+
     <Link to="/">
-      <div className="header__logo">LOGO</div>
+      <div className="header__logo"><Logo /></div>
     </Link>
     <div className="header__menu">
       <Link to="/contact">
@@ -32,12 +42,17 @@ const Header = ({ currentUser }) => (
             <div className="header__menu__item">Sign In</div>
           </Link>
         )}
+      <div className="header__menu__item" onClick={handleCartIcon_click}><CartIcon>1</CartIcon></div>
     </div>
+    {cartDropdownDisplay === true ? <CartDropdown /> : null}
+
   </div>
 );
 
 const mapStateToProps = state => ({
-  currentUser: state.user.currentUser
+  currentUser: state.user.currentUser,
+  cartDropdownDisplay: state.cartDropdown.show
 })
+
 
 export default connect(mapStateToProps)(Header);

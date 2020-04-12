@@ -34,3 +34,7 @@
   bottom: -20px;
   color: gray;
 }
+
+.shop-item__btn {
+  width: 100%;
+}
