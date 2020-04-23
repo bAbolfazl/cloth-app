@@ -1,13 +1,13 @@
 import React from 'react'
 
 import { connect } from 'react-redux'
-import  {toggleCartDropdownDisplay}  from '../../redux/cart-dropdown/cartDropdown.actions'
+import { toggleCartDropdown } from '../../redux/cart/cart.actions'
 
 import './cart-icon.styles.css'
 import { ReactComponent as ShoppigBag } from '../../assets/11.1 shopping-bag.svg.svg'
 
-const CartIcon = ({ children, toggleCartDropdownDisplay }) => (
-    <div className='cart-icon' onClick={toggleCartDropdownDisplay}>
+const CartIcon = ({ children, toggleCartDropdown }) => (
+    <div className='cart-icon' onClick={toggleCartDropdown}>
         <div className='cart-number'>
             {children}
         </div>
@@ -15,12 +15,9 @@ const CartIcon = ({ children, toggleCartDropdownDisplay }) => (
     </div>
 )
 
-
 const mapDispatchToProps = dispatch => {
     return {
-        toggleCartDropdownDisplay: () => {
-            return dispatch(toggleCartDropdownDisplay())
-        }
+        toggleCartDropdown: () => dispatch(toggleCartDropdown())
     }
 }
 

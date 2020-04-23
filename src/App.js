@@ -29,10 +29,10 @@ const Contact = () => (
 // };
 
 class App extends React.Component {
-  constructor() {
-    super();
-    this.state = { currentUser: null };
-  }
+  // constructor() {
+  //   super();
+  //   this.state = { currentUser: null };
+  // }
 
   subscribe = null;
 
@@ -83,11 +83,12 @@ const mapStateToProps = ({ user }) => {
   }
 }
 
-const mapDispatchToProps = dispatch => ({
-  setCurrentUser: user => {
-    return dispatch(setCurrentUser(user))
+const mapDispatchToProps = dispatch => {
+  return {
+    setCurrentUser: user => {
+      return dispatch(setCurrentUser(user))
+    }
   }
 }
-)
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

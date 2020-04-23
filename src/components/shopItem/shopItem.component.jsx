@@ -1,17 +1,17 @@
 import React from "react";
 import { connect } from 'react-redux'
 
-import {addProductToCart} from '../../redux/cart-dropdown/cartDropdown.actions'
+import {addProductToCart} from '../../redux/cart/cart.actions'
 
 import "./shopItem.style.css";
 
 
-const ShopItem = ({ name, imageUrl, price,addProductToCart }) => {
+const ShopItem = ({id, name, imageUrl, price,addProductToCart }) => {
   console.log("shopItem props", name);
   return (
     <div className="shop-item" style={{ backgroundImage: `url(${imageUrl})` }}>
       <div className='shop-item__btn-container'>
-        <button className='shop-item__btn' onClick={() => addProductToCart(name)}>
+        <button className='shop-item__btn' onClick={() => addProductToCart({id})}>
           SHOP NOW!
         </button>
       </div>

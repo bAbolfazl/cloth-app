@@ -30,6 +30,7 @@ class ShopPrev extends React.Component {
                 <div class="shop-item-container">
                   <ShopItem
                     key={shopItem.id}
+                    id = {shopItem.id}
                     name={shopItem.name}
                     imageUrl={shopItem.imageUrl}
                     price={shopItem.price}
