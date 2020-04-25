@@ -10,9 +10,6 @@ import CartIcon from "../cart-icon/cart-icon.component";
 import CartDropdown from '../cart-dropdown/cartDropdown.component'
 
 
-const handleCartIcon_click = () => {
-
-}
 
 const Header = ({ currentUser, cartDropdownDisplay }) => (
   <div className="header">
@@ -42,16 +39,16 @@ const Header = ({ currentUser, cartDropdownDisplay }) => (
             <div className="header__menu__item">Sign In</div>
           </Link>
         )}
-      <div className="header__menu__item" onClick={handleCartIcon_click}><CartIcon>1</CartIcon></div>
+      <div className="header__menu__item"><CartIcon>1</CartIcon></div>
     </div>
     {cartDropdownDisplay === true ? <CartDropdown /> : null}
 
   </div>
 );
 
-const mapStateToProps = state => ({
-  currentUser: state.user.currentUser,
-  cartDropdownDisplay: state.cartDropdown.show
+const mapStateToProps = ({ user, cart }) => ({
+  currentUser: user.currentUser,
+  cartDropdownDisplay: cart.show
 })
 
 

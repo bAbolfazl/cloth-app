@@ -27,12 +27,10 @@ class ShopPrev extends React.Component {
             // })
             .map(shopItem => {
               return (
-                <div class="shop-item-container">
+                <div className="shop-item-container">
                   <ShopItem
                     key={shopItem.id}
-                    name={shopItem.name}
-                    imageUrl={shopItem.imageUrl}
-                    price={shopItem.price}
+                    item={shopItem}
                   />
                 </div>
               );

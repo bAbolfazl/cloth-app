@@ -18,6 +18,7 @@ class ShopPage extends React.Component {
         {this.state.map(shop => {
           return (
             <div>
+              {console.log(shop.id)}
               <ShopPrev
                 key={shop.id}
                 title={shop.title}
