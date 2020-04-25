@@ -1,17 +1,18 @@
 import React from "react";
 import { connect } from 'react-redux'
 
-import {addProductToCart} from '../../redux/cart/cart.actions'
+import { addProductToCart } from '../../redux/cart/cart.actions'
 
 import "./shopItem.style.css";
 
 
-const ShopItem = ({id, name, imageUrl, price,addProductToCart }) => {
-  console.log("shopItem props", name);
+const ShopItem = ({ item, addProductToCart }) => {
+  const { id, name, imageUrl, price } = item
+  console.log("shopItem props", id);
   return (
     <div className="shop-item" style={{ backgroundImage: `url(${imageUrl})` }}>
       <div className='shop-item__btn-container'>
-        <button className='shop-item__btn' onClick={() => addProductToCart({id})}>
+        <button className='shop-item__btn' onClick={() => addProductToCart(item)}>
           SHOP NOW!
         </button>
       </div>
@@ -25,10 +26,9 @@ const ShopItem = ({id, name, imageUrl, price,addProductToCart }) => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    addProductToCart: (name) => {
-      return dispatch(addProductToCart(name))
-    }
+    addProductToCart: id => dispatch(addProductToCart(id))
   }
 }
+
 
 export default connect(null, mapDispatchToProps)(ShopItem);
