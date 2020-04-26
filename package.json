@@ -1,4 +1,5 @@
 {
+  "homepage": "https://babolfazl.github.io/clothShop",
   "name": "cloth-app",
   "version": "0.1.0",
   "private": true,
@@ -7,6 +8,7 @@
     "@testing-library/react": "^9.4.1",
     "@testing-library/user-event": "^7.2.1",
     "firebase": "^7.10.0",
+    "gh-pages": "^2.2.0",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-redux": "^7.2.0",
@@ -17,6 +19,8 @@
   },
   "scripts": {
     "start": "set PORT=4000 && react-scripts start",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
