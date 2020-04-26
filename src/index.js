@@ -13,7 +13,7 @@ import App from "./App";
 
 ReactDOM.render(
   <Provider store={store}>
-    <BrowserRouter basename='clothShop'>
+    <BrowserRouter basename='cloth-shop'>
       <App />
     </BrowserRouter>
   </Provider>,
