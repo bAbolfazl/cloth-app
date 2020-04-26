@@ -6,10 +6,10 @@ import { toggleCartDropdown } from '../../redux/cart/cart.actions'
 import './cart-icon.styles.css'
 import { ReactComponent as ShoppigBag } from '../../assets/11.1 shopping-bag.svg.svg'
 
-const CartIcon = ({ children, toggleCartDropdown }) => (
+const CartIcon = ({ children, toggleCartDropdown, itemsNo }) => (
     <div className='cart-icon' onClick={toggleCartDropdown}>
         <div className='cart-number'>
-            {children}
+            {itemsNo}
         </div>
         <ShoppigBag />
     </div>
@@ -21,4 +21,10 @@ const mapDispatchToProps = dispatch => {
     }
 }
 
-export default connect(null, mapDispatchToProps)(CartIcon)
+const mapStateToProps = ({ cart }) => {
+    return {
+        itemsNo: cart.itemsNo
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(CartIcon)

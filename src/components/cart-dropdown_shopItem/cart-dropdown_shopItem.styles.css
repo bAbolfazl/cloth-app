@@ -1,0 +1,19 @@
+.cart-dropdown__shop-item {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.cart-dropdown__shop-item__img img {
+  width: 100%;
+}
+.cart-dropdown__shop-item__img {
+  width: 60px;
+  margin-right: 20px;
+}
+.cart-dropdown__shop-item__name {
+    font-size: .85em;
+}
+.cart-dropdown__shop-item__number {
+    margin-top: 10px;
+}

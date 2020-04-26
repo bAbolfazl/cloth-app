@@ -1,11 +1,26 @@
 .cart-dropdown {
   width: 50px;
-  height: 250px;
-  background-color: brown;
+  height: 300px;
+  background-color: white;
   position: absolute;
   top: 85px;
   right: 15px;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) ;
-  border-radius: 5px;
+  /* border-radius: 5px; */
   z-index: 1;
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  border: solid 2px;
+}
+
+.cart-dropdown__btn {
+  position: absolute;
+  bottom: 0;
+}
+
+.cart-dropdown__items {
+  height: 80%;
+  overflow-y: auto;
+  padding: 0 20px;
 }

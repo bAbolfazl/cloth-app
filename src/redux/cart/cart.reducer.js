@@ -1,14 +1,10 @@
 import { SHOW_CART_DROPDOWN, ADD_PRODUCT_TO_CART } from './cart.actions'
-import { addProductToCart } from './cart.utils'
+import { addProductToCart, itemsNo } from './cart.utils'
 
 const INITIAL_STATE = {
     show: false,
-    items: [
-        {
-            id: null,
-            number: null
-        }
-    ]
+    items: [],
+    itemsNo: 0
 }
 
 const cartReducer = (state = INITIAL_STATE, action) => {
@@ -21,7 +17,8 @@ const cartReducer = (state = INITIAL_STATE, action) => {
         case ADD_PRODUCT_TO_CART:
             return {
                 ...state,
-                items: addProductToCart(state.items, action.payload)
+                items: addProductToCart(state.items, action.payload),
+                itemsNo: itemsNo(state.items)
             }
         default:
             return state

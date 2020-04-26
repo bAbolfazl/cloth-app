@@ -8,7 +8,6 @@ import "./shopItem.style.css";
 
 const ShopItem = ({ item, addProductToCart }) => {
   const { id, name, imageUrl, price } = item
-  console.log("shopItem props", id);
   return (
     <div className="shop-item" style={{ backgroundImage: `url(${imageUrl})` }}>
       <div className='shop-item__btn-container'>

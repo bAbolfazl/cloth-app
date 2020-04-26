@@ -48,7 +48,7 @@ const Header = ({ currentUser, cartDropdownDisplay }) => (
 
 const mapStateToProps = ({ user, cart }) => ({
   currentUser: user.currentUser,
-  cartDropdownDisplay: cart.show
+  cartDropdownDisplay: cart.show,
 })
 
 

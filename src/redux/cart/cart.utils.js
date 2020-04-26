@@ -8,10 +8,16 @@ export const addProductToCart = (oldItems, newItem) => {
             } else { return item }
         })
     } else {
-        return [...oldItems, {...newItem, number: 1}]
+        return [...oldItems, { ...newItem, number: 1 }]
     }
-
-
-
 }
 
+export const itemsNo = (items) => {
+    let count = 1;
+
+    items.map((item) => {
+        return count += item.number
+    })
+    console.log('count', count)
+    return count
+}

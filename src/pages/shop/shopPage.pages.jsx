@@ -11,14 +11,13 @@ class ShopPage extends React.Component {
   }
 
   render() {
-    console.log("state", this.state);
+    // console.log("state", this.state);
 
     return (
       <div className="shop-page">
         {this.state.map(shop => {
           return (
             <div>
-              {console.log(shop.id)}
               <ShopPrev
                 key={shop.id}
                 title={shop.title}
