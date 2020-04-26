@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/cloth-shop/static/css/main.fad74c09.chunk.css",
+    "main.js": "/cloth-shop/static/js/main.b5b702ef.chunk.js",
+    "main.js.map": "/cloth-shop/static/js/main.b5b702ef.chunk.js.map",
+    "runtime-main.js": "/cloth-shop/static/js/runtime-main.780fc0a1.js",
+    "runtime-main.js.map": "/cloth-shop/static/js/runtime-main.780fc0a1.js.map",
+    "static/js/2.c4da1fc3.chunk.js": "/cloth-shop/static/js/2.c4da1fc3.chunk.js",
+    "static/js/2.c4da1fc3.chunk.js.map": "/cloth-shop/static/js/2.c4da1fc3.chunk.js.map",
+    "index.html": "/cloth-shop/index.html",
+    "precache-manifest.eef1cdbf1f9de439ad57278933c7aba3.js": "/cloth-shop/precache-manifest.eef1cdbf1f9de439ad57278933c7aba3.js",
+    "service-worker.js": "/cloth-shop/service-worker.js",
+    "static/css/main.fad74c09.chunk.css.map": "/cloth-shop/static/css/main.fad74c09.chunk.css.map",
+    "static/js/2.c4da1fc3.chunk.js.LICENSE.txt": "/cloth-shop/static/js/2.c4da1fc3.chunk.js.LICENSE.txt",
+    "static/media/11.1 shopping-bag.svg.30f07071.svg": "/cloth-shop/static/media/11.1 shopping-bag.svg.30f07071.svg",
+    "static/media/4.3 crown.svg.ed28accb.svg": "/cloth-shop/static/media/4.3 crown.svg.ed28accb.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.780fc0a1.js",
+    "static/js/2.c4da1fc3.chunk.js",
+    "static/css/main.fad74c09.chunk.css",
+    "static/js/main.b5b702ef.chunk.js"
+  ]
+}
