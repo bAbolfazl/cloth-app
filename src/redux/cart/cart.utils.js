@@ -13,11 +13,15 @@ export const addProductToCart = (oldItems, newItem) => {
 }
 
 export const itemsNo = (items) => {
-    let count = 1;
+    return items.reduce((acc, item) => {
+        return acc += item.number
+    }, 1)
+    // let count = 1;
 
-    items.map((item) => {
-        return count += item.number
-    })
-    console.log('count', count)
-    return count
+    // items.map((item) => {
+    //     return count += item.number
+    // })
+
+    // console.log('count', count)
+    // return count
 }
