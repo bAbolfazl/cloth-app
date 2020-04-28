@@ -1,0 +1,15 @@
+.checkout-page {
+  margin: 50px 20%;
+}
+
+.checkout-page__table__header {
+  display: flex;
+  border-bottom: solid 1px;
+  justify-content: space-between;
+  padding-bottom: 15px;
+}
+
+.checkout-page__table__header div {
+  width: 20%;
+  text-align: center;
+}
