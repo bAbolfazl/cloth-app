@@ -12,16 +12,28 @@ export const addProductToCart = (oldItems, newItem) => {
     }
 }
 
+export const decreaseProductFromCart = (items, decItem) => {
+
+    if (decItem.number === 1) {
+        return removeProductFromCart(items, decItem)
+    }
+
+    return items.map((item) => {
+
+        if (item.id === decItem.id) {
+            // item.number = item.number - 1
+            return { ...item, number: item.number - 1 }
+        } else return item
+    })
+}
+
 export const itemsNo = (items) => {
     return items.reduce((acc, item) => {
         return acc += item.number
     }, 1)
-    // let count = 1;
+}
 
-    // items.map((item) => {
-    //     return count += item.number
-    // })
-
-    // console.log('count', count)
-    // return count
+export const removeProductFromCart = (items, reomveItem) => {
+    console.log('removeProductFromCarts')
+    return items.filter(item => item.id !== reomveItem.id)
 }

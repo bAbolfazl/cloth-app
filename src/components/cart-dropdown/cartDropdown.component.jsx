@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { withRouter } from 'react-router-dom'
+import { withRouter, Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { createStructuredSelector } from 'reselect'
 
@@ -24,12 +24,12 @@ const CartDropdown = ({ className, items, history, dispatch }) => (
                     <div className='cart-dropdown__items__empty'>Your cart is empty!</div>
             }
         </div>
-
-        <CustomBtn className='cart-dropdown__btn' fullWidth
-            onClick={() => handle_checkoutBtn(history, dispatch)}>
-            Shop Your Cloths!
+        <Link to='/checkout'>
+            <CustomBtn className='cart-dropdown__btn' fullWidth
+                onClick={() => handle_checkoutBtn(history, dispatch)}>
+                Shop Your Cloths!
         </CustomBtn>
-
+        </Link>
     </div >
 )
 
@@ -37,7 +37,7 @@ const CartDropdown = ({ className, items, history, dispatch }) => (
 
 
 const handle_checkoutBtn = (history, dispatch) => {
-    history.push('/checkout')
+    // history.push('/checkout')
     dispatch(toggleCartDropdown())
 }
 

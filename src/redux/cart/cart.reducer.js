@@ -1,5 +1,5 @@
-import { SHOW_CART_DROPDOWN, ADD_PRODUCT_TO_CART } from './cart.actions'
-import { addProductToCart, /*itemsNo*/ } from './cart.utils'
+import { SHOW_CART_DROPDOWN, ADD_PRODUCT_TO_CART, REMOVE_PRODUCT_FROM_CART, DECREASE_PRODUCT_FROM_CART } from './cart.actions'
+import { addProductToCart, removeProductFromCart, decreaseProductFromCart /*itemsNo*/ } from './cart.utils'
 
 const INITIAL_STATE = {
     show: false,
@@ -19,6 +19,17 @@ const cartReducer = (state = INITIAL_STATE, action) => {
                 ...state,
                 items: addProductToCart(state.items, action.payload),
                 // itemsNo: itemsNo(state.items)
+            }
+
+        case DECREASE_PRODUCT_FROM_CART:
+            return {
+                ...state,
+                items: decreaseProductFromCart(state.items, action.payload)
+            }
+        case REMOVE_PRODUCT_FROM_CART:
+            return {
+                ...state,
+                items: removeProductFromCart(state.items, action.payload)
             }
         default:
             return state

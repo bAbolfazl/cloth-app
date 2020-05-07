@@ -1,5 +1,4 @@
 {
-  "homepage": "https://babolfazl.github.io/cloth-shop",
   "name": "cloth-app",
   "version": "0.1.0",
   "private": true,
@@ -16,6 +15,7 @@
     "react-scripts": "3.4.0",
     "redux": "^4.0.5",
     "redux-logger": "^3.0.6",
+    "redux-persist": "^6.0.0",
     "reselect": "^4.0.0"
   },
   "scripts": {
