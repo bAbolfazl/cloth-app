@@ -1,71 +1,39 @@
-import React, { Component } from "react";
+import React from "react";
+
+import { connect } from 'react-redux'
+import { createStructuredSelector } from 'reselect'
+
+import { selectMenuListSections } from '../../redux/menuList/menuList.selectors'
 
 import MenuItem from "../menuItem/menuItem.component";
 
 import "./manuList.style.css";
 
-class MenuList extends Component {
-  constructor() {
-    super();
-    this.state = {
-      sections: [
-        {
-          title: "hats",
-          imageUrl: "https://i.ibb.co/cvpntL1/hats.png",
-          id: 1,
-          linkUrl: "shop/hats"
-        },
-        {
-          title: "jackets",
-          imageUrl: "https://i.ibb.co/px2tCc3/jackets.png",
-          id: 2,
-          linkUrl: "shop/jackets"
-        },
-        {
-          title: "sneakers",
-          imageUrl: "https://i.ibb.co/0jqHpnp/sneakers.png",
-          id: 3,
-          linkUrl: "shop/sneakers"
-        },
-        {
-          title: "womens",
-          imageUrl: "https://i.ibb.co/GCCdy8t/womens.png",
-          size: "large",
-          id: 4,
-          linkUrl: "shop/womens"
-        },
-        {
-          title: "mens",
-          imageUrl: "https://i.ibb.co/R70vBrQ/men.png",
-          size: "large",
-          id: 5,
-          linkUrl: "shop/mens"
-        }
-      ]
-    };
-  }
+const MenuList = ({ sections }) => {
 
-  render() {
-    // console.log(this.state.sections);
-    // const { title, id, imageUrl, size } = this.state.sections;
-    // console.log(title)
-    return (
-      <div className="manuList">
-        {this.state.sections.map(({ title, id, imageUrl, size, linkUrl }) => {
-          return (
-            <MenuItem
-              key={id}
-              title={title}
-              imageUrl={imageUrl}
-              size={size}
-              className="manuItem"
-              linkUrl={linkUrl}
-            />
-          );
-        })}
-      </div>
-    );
-  }
+  // console.log(this.state.sections);
+  // const { title, id, imageUrl, size } = this.state.sections;
+  // console.log(title)
+  return (
+    <div className="manuList">
+      {sections.map(({ title, id, imageUrl, size, linkUrl }) => {
+        return (
+          <MenuItem
+            key={id}
+            title={title}
+            imageUrl={imageUrl}
+            size={size}
+            className="manuItem"
+            linkUrl={linkUrl}
+          />
+        );
+      })}
+    </div>
+  );
 }
 
-export default MenuList;
+const mapStateToProps = createStructuredSelector({
+  sections: selectMenuListSections
+})
+
+export default connect(mapStateToProps)(MenuList);

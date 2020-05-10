@@ -23,14 +23,6 @@ const Contact = () => (
     <h2>contact us page</h2>
   </div>
 );
-// const SignIn = () => <div>sign in</div>;
-// const Header = () => {
-//   return <div>Header Section</div>;
-// };
-// const ShopPage = () => {
-//   return <div>ShopPage</div>;
-// };
-
 class App extends React.Component {
   // constructor() {
   //   super();
