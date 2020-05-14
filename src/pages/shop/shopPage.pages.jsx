@@ -1,35 +1,16 @@
 import React from "react";
 
-import ShopPrev from "../../components/shopPrev/shopPrev.component";
+import ShopSections from '../../components/shop-sections/shop-sections.component'
 
-import Shop_Data from "./shopPage.data";
+// import Shop_Data from "./shopPage.data";
 
-class ShopPage extends React.Component {
-  constructor() {
-    super();
-    this.state = Shop_Data;
-  }
+const ShopPage = () => {
 
-  render() {
-    // console.log("state", this.state);
-
-    return (
-      <div className="shop-page">
-        {this.state.map(shop => {
-          return (
-            <div>
-              <ShopPrev
-                key={shop.id}
-                title={shop.title}
-                routeName={shop.routeName}
-                items={shop.items}
-              />
-            </div>
-          );
-        })}
-      </div>
-    );
-  }
+  return (
+    <div className="shop-page">
+      <ShopSections />
+    </div>
+  );
 }
 
 export default ShopPage;
